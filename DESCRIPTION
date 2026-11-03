@@ -1,0 +1,12 @@
+Package: bikehours
+Title: Explore Hourly Bike Rental Patterns
+Version: 0.1.0
+Authors@R: person("Aditi", "Srinivas", email = "asri0053@student.monash.edu", role = c("aut", "cre"))
+Description: Explore hourly Capital Bikeshare rentals from 2011 to 2012.
+    Compare rental patterns for casual and registered riders across working
+    and non-working days using an interactive Shiny application.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    shiny
