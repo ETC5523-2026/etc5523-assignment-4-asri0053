@@ -4,6 +4,8 @@ When did bike rentals peak for casual and registered riders? `bikehours` is
 an R package with a Shiny app for bike-share operations planners exploring
 hourly Capital Bikeshare rentals in 2011–2012.
 
+[View the bikehours documentation and user guide](https://etc5523-2026.github.io/etc5523-assignment-4-asri0053/)
+
 ## Install and launch
 
 Install the package from GitHub:
