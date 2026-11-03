@@ -1,0 +1,42 @@
+# Hourly Capital Bikeshare rentals, 2011–2012
+
+Rental counts for casual and registered riders in the Capital Bikeshare
+system. Each row represents one recorded hour.
+
+## Usage
+
+``` r
+bike_hourly
+```
+
+## Format
+
+A data frame with 17,379 rows and 5 columns:
+
+- date:
+
+  Calendar date of the observation.
+
+- hour:
+
+  Hour of the day, from 0 (midnight) to 23 (11 pm).
+
+- day_type:
+
+  Working day or non-working day. Non-working days include weekends and
+  holidays.
+
+- casual:
+
+  Number of rentals by casual riders during that hour.
+
+- registered:
+
+  Number of rentals by registered riders during that hour.
+
+## Source
+
+Hadi Fanaee-T, Bike Sharing dataset, UCI Machine Learning Repository.
+<https://doi.org/10.24432/C5W894>. Licensed under [CC BY
+4.0](https://creativecommons.org/licenses/by/4.0/). This version retains
+five fields and labels the day types.
