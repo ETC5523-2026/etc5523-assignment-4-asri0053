@@ -1,11 +1,13 @@
 library(shiny)
 
 ui <- fluidPage(
+  tags$head(tags$link(rel = "stylesheet", href = "bikehours.css")),
   tags$style(HTML("
     body { color: #17324a; }
     .container-fluid { max-width: 1050px; margin: auto; }
-    .well { background: #edf5f7; }
-    .finding { border-left: 4px solid #0072B2; padding: 10px 14px; }
+    .well { background: #f1f7fb; border: 1px solid #c9dce8; border-radius: 10px; }
+.finding { background: #eef6fc; border-left: 4px solid #006DAE; padding: 12px 16px; }
+.finding .shiny-text-output { font-weight: 700; }
   ")),
   
   titlePanel("When did Capital Bikeshare rentals peak?"),
@@ -29,8 +31,7 @@ ui <- fluidPage(
     
     mainPanel(
       h3("Average rentals by hour"),
-      p("Each point on a line is the average rental count for that clock hour
-        across recorded days of the selected type."),
+      p("Each line shows average rentals at each hour. The dot marks the busiest hour for that rider group."),
       plotOutput("hourly_plot"),
       div(class = "finding", textOutput("peak_text"))
     )
@@ -64,6 +65,12 @@ server <- function(input, output, session) {
       ylim = c(0, max(values[groups])), xaxt = "n"
     )
     axis(1, at = c(0, 4, 8, 12, 16, 20, 23))
+    for (group in groups) {
+      peak <- which.max(values[[group]])
+      points(values$hour[peak], values[[group]][peak],
+             pch = 21, bg = colours[group], col = "white",
+             cex = 1.7, lwd = 1.5)
+    }
     legend("topleft", legend = labels[groups], col = colours[groups],
            lty = styles[groups], lwd = 3, bty = "n")
   })

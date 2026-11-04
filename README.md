@@ -43,3 +43,4 @@ day types. The package code is licensed under the MIT licence.
 
 ## Generative AI declaration
 
+I used AI to clarify how my app calculates and displays hourly rental patterns, discuss chart design, and get suggestions for checking peak hours and testing the packaged data.

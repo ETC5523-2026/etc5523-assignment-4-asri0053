@@ -10,7 +10,8 @@
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Explore Hourly Bike Rental Patterns">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
+<meta property="og:title" content="Explore Hourly Bike Rental Patterns">
 <meta name="description" content="Explore hourly Capital Bikeshare rentals from 2011 to 2012. Compare rental patterns for casual and registered riders across working and non-working days using an interactive Shiny application.">
 <meta property="og:description" content="Explore hourly Capital Bikeshare rentals from 2011 to 2012. Compare rental patterns for casual and registered riders across working and non-working days using an interactive Shiny application.">
 </head>
@@ -51,37 +52,31 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="bikehours">bikehours<a class="anchor" aria-label="anchor" href="#bikehours"></a>
+<div class="page-header"><h1 id="when-do-bike-rentals-peak">When do bike rentals peak?<a class="anchor" aria-label="anchor" href="#when-do-bike-rentals-peak"></a>
 </h1></div>
-<p>When did bike rentals peak for casual and registered riders? <code>bikehours</code> is an R package with a Shiny app for bike-share operations planners exploring hourly Capital Bikeshare rentals in 2011–2012.</p>
-<p><a href="https://etc5523-2026.github.io/etc5523-assignment-4-asri0053/" class="external-link">View the bikehours documentation and user guide</a></p>
-<div class="section level2">
-<h2 id="install-and-launch">Install and launch<a class="anchor" aria-label="anchor" href="#install-and-launch"></a>
-</h2>
-<p>Install the package from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Run once if needed: install.packages("remotes")</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ETC5523-2026/etc5523-assignment-4-asri0053"</span><span class="op">)</span></span></code></pre></div>
-<p>Load the package and launch the app:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">bikehours</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/launch_app.html">launch_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="explore-the-data">Explore the data<a class="anchor" aria-label="anchor" href="#explore-the-data"></a>
-</h2>
-<p>Choose a working or non-working day, then select the rider groups to compare. Each line shows the average number of rentals at each hour across recorded days of the selected type. Non-working days include weekends and holidays.</p>
-<p>With both groups selected, switch between day types. On working days, both groups peaked at 5 pm. On non-working days, registered rentals peaked at noon and casual rentals at 2 pm. These system-wide averages describe historical patterns and cannot identify which individual stations were busiest.</p>
-</div>
-<div class="section level2">
-<h2 id="data-and-licence">Data and licence<a class="anchor" aria-label="anchor" href="#data-and-licence"></a>
-</h2>
-<p>The data comes from Hadi Fanaee-T’s <a href="https://doi.org/10.24432/C5W894" class="external-link">Bike Sharing dataset</a>, available from the UCI Machine Learning Repository under <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">CC BY 4.0</a>. The preparation script retains five fields, converts the date and labels the day types. The package code is licensed under the MIT licence.</p>
-</div>
-<div class="section level2">
-<h2 id="generative-ai-declaration">Generative AI declaration<a class="anchor" aria-label="anchor" href="#generative-ai-declaration"></a>
-</h2>
-</div>
+<p><strong>Capital Bikeshare · 2011–2012</strong></p>
+<p>On working days, casual and registered rentals both peaked at <strong>5 pm</strong>. On weekends and holidays, registered rentals peaked at <strong>12 pm</strong> and casual rentals peaked two hours later, at <strong>2 pm</strong>.</p>
+<table class="table">
+<thead><tr>
+<th align="left">Rider group</th>
+<th align="left">Working days</th>
+<th align="left">Weekends and holidays</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left">Casual</td>
+<td align="left">5 pm</td>
+<td align="left">2 pm</td>
+</tr>
+<tr>
+<td align="left">Registered</td>
+<td align="left">5 pm</td>
+<td align="left">12 pm</td>
+</tr>
+</tbody>
+</table>
+<p>Each peak is the hour with the highest average number of rentals for that rider group. The app lets bike-share operations planners explore the full 24-hour pattern behind these figures.</p>
+<p><a href="articles/bikehours-guide.html">Open the user guide</a> · <a href="reference/index.html">Explore the data and functions</a></p>
 </div>
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>
